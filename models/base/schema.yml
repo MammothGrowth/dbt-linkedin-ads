@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: linkedin_ads_accounts
+    columns:
+        - name: account_id
+          tests:
+              - unique
+              - not_null
+              
+  - name: linkedin_ads_ad_groups
+    columns:
+        - name: ad_group_id
+          tests:
+              - unique
+              - not_null
+              
+  - name: linkedin_ads_ads
+    columns:
+        - name: ad_id
+          tests:
+              - unique
+              - not_null
+              
+  - name: linkedin_ads_campaigns
+    columns:
+        - name: campaign_id
+          tests:
+              - unique
+              - not_null
+              
+  - name: linkedin_ads_keyword_performance
+    columns:
+        - name: keyword_performance_report_id
+          tests:
+              - unique
+              - not_null

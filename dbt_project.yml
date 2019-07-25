@@ -1,0 +1,19 @@
+name: 'linkedin_ads'
+version: '1.0'
+
+source-paths: ["models"]
+analysis-paths: ["analysis"]
+target-path: "target"
+clean-targets: ["target"]
+test-paths: ["test"]
+data-paths: ["data"]
+
+models:
+  bing_ads:
+    vars:
+      etl:                                   #stitch or fivetran
+      accounts_table:                        #schema.table
+      campaign_groups_table:                 #schema.table
+      creatives_table:                       #schema.table
+      campaigns_table:                       #schema.table
+      creative_performance_report_table:     #schema.table
