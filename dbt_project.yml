@@ -9,7 +9,7 @@ test-paths: ["test"]
 data-paths: ["data"]
 
 models:
-  bing_ads:
+  linkedin_ads:
     vars:
       etl:                                   #stitch or fivetran
       accounts_table:                        #schema.table

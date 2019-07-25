@@ -11,11 +11,12 @@ with aggregated as(
     select 
 
         id as creative_id,
+        campaign_id,
         status,
         type,
         text as ad_text,
         title,
-        header,
+        headline,
         click_uri as url,
         last_modified_time,
         _fivetran_synced

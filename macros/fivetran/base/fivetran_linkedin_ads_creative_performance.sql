@@ -34,21 +34,16 @@ rollup1 as (
 
     select
         {{dbt_utils.surrogate_key(
-            'date', 
-            'creative_id', 
-            'campaign_id', 
-            'campaign_group_id')}} 
+            'day', 
+            'creative_id')}} 
         as creative_performance_report_id,
         day as campaign_date,
-        account_id,
-        campaign_group_id,
         creative_id,
-        campaign_id,
         sum(clicks) as clicks,
         sum(impressions) as impressions,
         sum(cost_in_local_currency) as spend
     from source1 as source
-    {{dbt_utils.group_by(6)}}
+    {{dbt_utils.group_by(3)}}
     
 ),
 
@@ -56,14 +51,17 @@ joined as (
 
     select
         rollup.*,
-        campaign_groups.name as ad_group_name,
+        campaign_groups.name as campaign_group_name,
+        campaigns.campaign_id,
         campaigns.name as campaign_name,
         campaigns.status as campaign_status,
-        replace(coalesce(ads.url, ''),'%20', ' ') as url
+        campaign_groups.account_id,
+        campaign_groups.campaign_group_id,
+        replace(coalesce(creatives.url, ''),'%20', ' ') as url
     from rollup1 as rollup
-    left join campaign_groups1 as campaign_groups using (campaign_group_id)
-    left join campaigns1 as campaigns using (campaign_id)
     left join creatives1 as creatives using (creative_id)
+    left join campaigns1 as campaigns ON creatives.campaign_id = campaigns.campaign_id
+    left join campaign_groups1 as campaign_groups ON campaign_groups.campaign_group_id = campaigns.campaign_group_id
         
 ),
 

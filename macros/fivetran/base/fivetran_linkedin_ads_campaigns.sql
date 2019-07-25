@@ -16,7 +16,7 @@ with aggregated as(
         name,
         status,
         type as campaign_type,
-        objective,
+        objective_type,
         optimization_target_type,
         creative_selection,
         locale_country,
