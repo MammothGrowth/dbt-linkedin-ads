@@ -8,16 +8,16 @@ models:
               - unique
               - not_null
               
-  - name: linkedin_ads_ad_groups
+  - name: linkedin_ads_campaign_groups
     columns:
-        - name: ad_group_id
+        - name: campaign_group_id
           tests:
               - unique
               - not_null
               
-  - name: linkedin_ads_ads
+  - name: linkedin_ads_creatives
     columns:
-        - name: ad_id
+        - name: creative_id
           tests:
               - unique
               - not_null
@@ -29,9 +29,9 @@ models:
               - unique
               - not_null
               
-  - name: linkedin_ads_keyword_performance
+  - name: linkedin_ads_creative_performance
     columns:
-        - name: keyword_performance_report_id
+        - name: creative_performance_report_id
           tests:
               - unique
               - not_null

@@ -19,9 +19,8 @@ select
     reference,
     last_modified_time,
     _fivetran_synced
+from {{source('linkedin_ads', 'ACCOUNT_HISTORY')}}
     
-from {{var('accounts_table')}}
-
 ),ranked as (
 
     select

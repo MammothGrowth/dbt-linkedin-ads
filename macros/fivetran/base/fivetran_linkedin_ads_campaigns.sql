@@ -23,7 +23,7 @@ with aggregated as(
         daily_budget_amount budget,
         _fivetran_synced
 
-    from {{var('campaigns_table')}}
+    from {{source('linkedin_ads', 'CAMPAIGN_HISTORY')}}
 
 ),ranked as (
 

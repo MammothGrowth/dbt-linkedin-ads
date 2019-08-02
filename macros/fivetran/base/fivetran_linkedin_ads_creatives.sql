@@ -14,14 +14,13 @@ with aggregated as(
         campaign_id,
         status,
         type,
-        text as ad_text,
-        title,
+        text_ad_text as ad_text,
+        text_ad_title as ad_title,
         headline,
         click_uri as url,
         last_modified_time,
         _fivetran_synced
-
-    from {{var('creatives_table')}}
+    from {{source('linkedin_ads', 'CREATIVE_HISTORY')}}
 ),ranked as (
 
     select

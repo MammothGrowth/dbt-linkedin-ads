@@ -8,7 +8,8 @@
 
 with source1 as (
 
-    select * from {{var('creative_performance_report_table')}}
+    select * 
+    from {{source('linkedin_ads', 'AD_ANALYTICS_BY_CREATIVE')}}
     
 ),
 

@@ -18,8 +18,7 @@ select
     status,
     name,
     _fivetran_synced
-
-from {{var('campaign_groups_table')}}
+from {{source('linkedin_ads', 'CAMPAIGN_GROUP_HISTORY')}}
 
 ),ranked as (
 
