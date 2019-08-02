@@ -16,7 +16,6 @@ with aggregated as(
         type,
         text_ad_text as ad_text,
         text_ad_title as ad_title,
-        headline,
         click_uri as url,
         last_modified_time,
         _fivetran_synced

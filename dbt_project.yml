@@ -12,8 +12,3 @@ models:
   linkedin_ads:
     vars:
       etl:                                   #stitch or fivetran
-      accounts_table:                        #schema.table
-      campaign_groups_table:                 #schema.table
-      creatives_table:                       #schema.table
-      campaigns_table:                       #schema.table
-      creative_performance_report_table:     #schema.table
